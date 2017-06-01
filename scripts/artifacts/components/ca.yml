@@ -1,0 +1,6 @@
+
+version: '2'
+
+services:
+  ca:
+    image: hyperledger/fabric-ca:${FABRIC_VERSION}

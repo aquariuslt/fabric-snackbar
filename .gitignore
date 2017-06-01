@@ -1,0 +1,22 @@
+# IDEA
+.idea
+*.iml
+
+# Node.js
+node_modules
+
+# Eclipse
+.settings
+.classpath
+.project
+bin
+
+# Project Distribution
+coverage
+reports
+out
+target
+dist
+
+# Log File
+*.log
