@@ -23,8 +23,6 @@ docker-compose up -d
 
 ### Component Definition
 
-#### ccenv
-
 #### zookeeper
 
 #### kafka
