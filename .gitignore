@@ -19,8 +19,7 @@ target
 dist
 
 # Project Development cryptogen && configtxgen tmp
-scripts/crypto-config-dev/crypto-config
-#scripts/configtx-config-dev/
+scripts/artifacts-dev/crypto-config
 
 # Log File
 *.log
