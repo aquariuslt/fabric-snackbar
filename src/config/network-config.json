@@ -8,19 +8,35 @@
     "factory": {
       "name": "factory",
       "mspid": "factory-msp",
-      "ca": "",
+      "ca": "http://localhost:7054",
       "factory-peer-a": {
+        "requests": "grpcs://localhost:7051",
+        "events": "grpcs://localhost:7053",
+        "server-hostname": "factory-peer-a",
+        "tls_cacerts": "../artifacts/tls/peers/factory-peer-a/ca-cert.pem"
       },
       "factory-peer-b": {
+        "requests": "grpcs://localhost:7056",
+        "events": "grpcs://localhost:7058",
+        "server-hostname": "factory-peer-b",
+        "tls_cacerts": "../artifacts/tls/peers/factory-peer-b/ca-cert.pem"
       }
     },
     "snackbar": {
       "name": "snackbar",
       "mspid": "snackbar-msp",
-      "ca": "",
+      "ca": "http://localhost:8054",
       "snackbar-peer-a": {
+        "requests": "grpcs://localhost:8051",
+        "events": "grpcs://localhost:8053",
+        "server-hostname": "snackbar-peer-a",
+        "tls_cacerts": "../artifacts/tls/peers/snackbar-peer-a/ca-cert.pem"
       },
       "snackbar-peer-b": {
+        "requests": "grpcs://localhost:8056",
+        "events": "grpcs://localhost:8058",
+        "server-hostname": "snackbar-peer-b",
+        "tls_cacerts": "../artifacts/tls/peers/snackbar-peer-b/ca-cert.pem"
       }
     }
   }

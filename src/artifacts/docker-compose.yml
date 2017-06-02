@@ -24,7 +24,8 @@ services:
       KAFKA_REPLICA_FETCH_MAX_BYTES: 103809024
       KAFKA_UNCLEAN_LEADER_ELECTION_ENABLE: "false"
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-
+    depends_on:
+      - zookeeper
   ## Dynamic Scalable Components
 
   ## CA
@@ -69,6 +70,7 @@ services:
       file: ./components/orderer.yml
       service: orderer
     container_name: factory-orderer
+    hostname: factory-orderer
     volumes:
       - ./channel:/etc/hyperledger/configtx
       - ./crypto-config/orderer-organizations/factory/orderers/factory-orderer/:/etc/hyperledger/msp/orderer
@@ -92,6 +94,7 @@ services:
       file: ./components/peer.yml
       service: peer
     container_name: factory-peer-a
+    hostname: factory-peer-a
     volumes:
       - /var/run/:/host/var/run/
       - ./crypto-config/peer-organizations/factory/peers/factory-peer-a/:/etc/hyperledger/msp/peer
@@ -119,6 +122,7 @@ services:
       file: ./components/peer.yml
       service: peer
     container_name: factory-peer-b
+    hostname: factory-peer-b
     volumes:
       - /var/run/:/host/var/run/
       - ./crypto-config/peer-organizations/factory/peers/factory-peer-b/:/etc/hyperledger/msp/peer
@@ -146,6 +150,7 @@ services:
       file: ./components/peer.yml
       service: peer
     container_name: snackbar-peer-a
+    hostname: snackbar-peer-a
     volumes:
       - /var/run/:/host/var/run/
       - ./crypto-config/peer-organizations/snackbar/peers/snackbar-peer-a/:/etc/hyperledger/msp/peer
@@ -172,6 +177,7 @@ services:
       file: ./components/peer.yml
       service: peer
     container_name: snackbar-peer-b
+    hostname: snackbar-peer-b
     volumes:
       - /var/run/:/host/var/run/
       - ./crypto-config/peer-organizations/snackbar/peers/snackbar-peer-b/:/etc/hyperledger/msp/peer

@@ -1,13 +1,12 @@
 /*** Created by aquariuslt on 6/2/17.*/
 
-import winston from 'winston';
 import jwt from 'jsonwebtoken';
 
-
 import config from '../../../config/config';
-
-import logger from '../../../lib/logger';
-
+import userService from '../services/user.service';
+import * as _ from "lodash";
+import log4js from 'log4js';
+let logger = log4js.getLogger('AuthRoutes');
 
 /**
  * curl -s -X POST http://localhost:5000/users -H "cache-control: no-cache" -H "content-type: application/x-www-form-urlencoded" -d 'username=Jason&organization=factory'
@@ -29,10 +28,19 @@ function authRoutes(app) {
         organization: organization
       }, app.get('secret'));
 
-
-      res.json({
-        token: token
-      });
+      userService.getRegisteredUsers({username, organization})
+        .then((response) => {
+          if (response && !_.isString(response)) {
+            response.token = token;
+            res.json(response);
+          }
+          else {
+            res.json({
+              success: false,
+              message: response
+            })
+          }
+        });
     });
 }
 

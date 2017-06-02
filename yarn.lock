@@ -35,6 +35,10 @@ acorn@^5.0.1:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.0.3.tgz#c460df08491463f028ccb82eab3730bf01087b3d"
 
+aes-js@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/aes-js/download/aes-js-1.0.0.tgz#41300dfc4efe4fc6c85ccce48906d54e05fe2a41"
+
 ajv-keywords@^1.0.0:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-1.5.1.tgz#314dd0a4b3368fad3dfcdc54ede6171b886daf3c"
@@ -125,9 +129,13 @@ ascli@~1:
     colour "~0.7.1"
     optjs "~3.2.2"
 
-asn1@~0.2.3:
+"asn1@https://github.com/mcavage/node-asn1", asn1@~0.2.3:
   version "0.2.3"
-  resolved "https://registry.yarnpkg.com/asn1/-/asn1-0.2.3.tgz#dac8787713c9966849fc8180777ebe9c1ddf3b86"
+  resolved "https://github.com/mcavage/node-asn1#2c2a19e285a609adfca36a0114bb5b86cf4ac61b"
+
+asn1js@^1.2.12:
+  version "1.2.12"
+  resolved "http://registry.npm.taobao.org/asn1js/download/asn1js-1.2.12.tgz#87d5ee797596ae2d2a3cb0247220dc42ffc3f211"
 
 assert-plus@1.0.0, assert-plus@^1.0.0:
   version "1.0.0"
@@ -980,11 +988,7 @@ cryptiles@2.x.x:
   dependencies:
     boom "2.x.x"
 
-crypto@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/crypto/-/crypto-0.0.3.tgz#470a81b86be4c5ee17acc8207a1f5315ae20dbb0"
-
-crypto@^0.0.3:
+crypto@0.0.3, crypto@^0.0.3:
   version "0.0.3"
   resolved "http://registry.npm.taobao.org/crypto/download/crypto-0.0.3.tgz#470a81b86be4c5ee17acc8207a1f5315ae20dbb0"
 
@@ -1004,6 +1008,10 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
+date-format@^0.0.0:
+  version "0.0.0"
+  resolved "http://registry.npm.taobao.org/date-format/download/date-format-0.0.0.tgz#09206863ab070eb459acea5542cbd856b11966b3"
+
 debug@2.2.0, debug@~2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.2.0.tgz#f87057e995b1a1f6ae6a4960664137bc56f039da"
@@ -1015,6 +1023,10 @@ debug@2.6.7, debug@^2.1.1, debug@^2.2.0:
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.7.tgz#92bad1f6d05bbb6bba22cca88bcd0ec894c2861e"
   dependencies:
     ms "2.0.0"
+
+debug@^0.7.2:
+  version "0.7.4"
+  resolved "http://registry.npm.taobao.org/debug/download/debug-0.7.4.tgz#06e1ea8082c2cb14e39806e22e2f6f757f92af39"
 
 decamelize@^1.1.1:
   version "1.2.0"
@@ -1349,6 +1361,10 @@ event-emitter@~0.3.5:
     d "1"
     es5-ext "~0.10.14"
 
+events@^1.1.0:
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/events/download/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
+
 exit-hook@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/exit-hook/-/exit-hook-1.1.1.tgz#f05ca233b48c05d54fff07765df8507e95c02ff8"
@@ -1443,10 +1459,11 @@ eyes@0.1.x:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/eyes/-/eyes-0.1.8.tgz#62cf120234c683785d902348a800ef3e0cc20bc0"
 
-fabric-ca-client@^1.0.0-alpha2:
-  version "1.0.0-snapshot.58"
-  resolved "https://registry.yarnpkg.com/fabric-ca-client/-/fabric-ca-client-1.0.0-snapshot.58.tgz#41f8919e3bc21b548fe9fe4ce5bb9d2a4bc777af"
+"fabric-ca-client@>=1.0.0-alpha <1.0.0-alpha.10":
+  version "1.0.0-alpha.1"
+  resolved "http://registry.npm.taobao.org/fabric-ca-client/download/fabric-ca-client-1.0.0-alpha.1.tgz#8d53d6cce6b381a3da37885934ebd210ace8abb4"
   dependencies:
+    asn1 "https://github.com/mcavage/node-asn1"
     bn.js "^4.11.3"
     elliptic "^6.2.3"
     fs-extra ">=0.30.0 <0.31.0"
@@ -1459,35 +1476,44 @@ fabric-ca-client@^1.0.0-alpha2:
     url "^0.11.0"
     util "^0.10.3"
     winston "^2.2.0"
-    x509 "^0.3.2"
 
-fabric-client@^1.0.0-alpha2:
-  version "1.0.0-snapshot.58"
-  resolved "https://registry.yarnpkg.com/fabric-client/-/fabric-client-1.0.0-snapshot.58.tgz#4e36800b78746ebf87dac54ff6b69fdcd3bfc933"
+"fabric-client@>=1.0.0-alpha <1.0.0-alpha.10":
+  version "1.0.0-alpha.1"
+  resolved "http://registry.npm.taobao.org/fabric-client/download/fabric-client-1.0.0-alpha.1.tgz#333eeba3e48a0b7977a6f833e08ad4886d19a613"
   dependencies:
+    aes-js "^1.0.0"
+    asn1 "https://github.com/mcavage/node-asn1"
+    asn1js "^1.2.12"
     bn.js "^4.11.3"
     callsite "^1.0.0"
     crypto "0.0.3"
     elliptic "^6.2.3"
+    events "^1.1.0"
     fs "0.0.2"
     fs-extra ">=0.30.0 <0.31.0"
     grpc ">=1.1.2 <1.3.0"
+    hashtable "^2.0.2"
     js-sha3 "^0.5.1"
+    json-stringify-safe "^5.0.1"
     jsrsasign "6.2.2"
     jssha "^2.1.0"
     klaw "1.3.1"
+    lodash "^4.15.0"
     nconf "^0.8.4"
+    node-dir "^0.1.16"
+    node.extend "^1.1.5"
     path "^0.12.7"
     pkcs11js "^1.0.6"
+    pkijs "^1.3.19"
     promise-settle "^0.3.0"
     sjcl "1.0.3"
     sjcl-codec "0.1.1"
+    sleep "^3.0.1"
     stream-buffers "3.0.1"
     tar-stream "1.5.2"
     url "^0.11.0"
     util "^0.10.3"
     winston "^2.2.0"
-    x509 "^0.3.2"
 
 fast-levenshtein@~2.0.4:
   version "2.0.6"
@@ -1754,6 +1780,12 @@ hash.js@^1.0.0, hash.js@^1.0.3:
   dependencies:
     inherits "^2.0.1"
 
+hashtable@^2.0.2:
+  version "2.0.2"
+  resolved "http://registry.npm.taobao.org/hashtable/download/hashtable-2.0.2.tgz#bd4443d53bedaaf5f68ff086dfb24321afa7205c"
+  dependencies:
+    nan latest
+
 hawk@~3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/hawk/-/hawk-3.1.3.tgz#078444bd7c1640b0fe540d2c9b73d59678e8e1c4"
@@ -1994,6 +2026,14 @@ is-typedarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
 
+is@^3.1.0:
+  version "3.2.1"
+  resolved "http://registry.npm.taobao.org/is/download/is-3.2.1.tgz#d0ac2ad55eb7b0bec926a5266f6c662aaa83dca5"
+
+isarray@0.0.1:
+  version "0.0.1"
+  resolved "http://registry.npm.taobao.org/isarray/download/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
+
 isarray@1.0.0, isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
@@ -2064,7 +2104,7 @@ json-stable-stringify@^1.0.0, json-stable-stringify@^1.0.1:
   dependencies:
     jsonify "~0.0.0"
 
-json-stringify-safe@~5.0.1:
+json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
 
@@ -2187,6 +2227,14 @@ lodash@^4.0.0, lodash@^4.15.0, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.4"
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
+log4js@^1.1.1:
+  version "1.1.1"
+  resolved "http://registry.npm.taobao.org/log4js/download/log4js-1.1.1.tgz#c21d29c7604089e4f255833e7f94b3461de1ff43"
+  dependencies:
+    debug "^2.2.0"
+    semver "^5.3.0"
+    streamroller "^0.4.0"
+
 long@~3:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/long/-/long-3.2.0.tgz#d821b7138ca1cb581c172990ef14db200b5c474b"
@@ -2285,13 +2333,13 @@ mute-stream@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.5.tgz#8fbfabb0a98a253d3184331f9e8deb7372fac6c0"
 
-nan@2.2.0, nan@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.2.0.tgz#779c07135629503cf6a7b7e6aab33049b3c3853c"
-
-nan@^2.3.0, nan@^2.5.1:
+nan@>=2.0.0, nan@^2.0.0, nan@^2.3.0, nan@^2.5.1:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
+
+nan@latest:
+  version "2.6.2"
+  resolved "http://registry.npm.taobao.org/nan/download/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -2310,6 +2358,12 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+node-dir@^0.1.16:
+  version "0.1.17"
+  resolved "http://registry.npm.taobao.org/node-dir/download/node-dir-0.1.17.tgz#5f5665d93351335caabef8f1c554516cf5f1e4e5"
+  dependencies:
+    minimatch "^3.0.2"
+
 node-pre-gyp@^0.6.0, node-pre-gyp@^0.6.29:
   version "0.6.36"
   resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.6.36.tgz#db604112cb74e0d477554e9b505b17abddfab786"
@@ -2323,6 +2377,12 @@ node-pre-gyp@^0.6.0, node-pre-gyp@^0.6.29:
     semver "^5.3.0"
     tar "^2.2.1"
     tar-pack "^3.4.0"
+
+node.extend@^1.1.5:
+  version "1.1.6"
+  resolved "http://registry.npm.taobao.org/node.extend/download/node.extend-1.1.6.tgz#a7b882c82d6c93a4863a5504bd5de8ec86258b96"
+  dependencies:
+    is "^3.1.0"
 
 nopt@^4.0.1:
   version "4.0.1"
@@ -2537,6 +2597,10 @@ pkg-dir@^1.0.0:
   dependencies:
     find-up "^1.0.0"
 
+pkijs@^1.3.19:
+  version "1.3.33"
+  resolved "http://registry.npm.taobao.org/pkijs/download/pkijs-1.3.33.tgz#a689ef62113b7c348e1ffc09965d2239e5bb4c92"
+
 pluralize@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-1.2.1.tgz#d1a21483fd22bb41e58a12fa3421823140897c45"
@@ -2647,6 +2711,15 @@ read-pkg@^2.0.0:
     load-json-file "^2.0.0"
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
+
+readable-stream@^1.1.7:
+  version "1.1.14"
+  resolved "http://registry.npm.taobao.org/readable-stream/download/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
+  dependencies:
+    core-util-is "~1.0.0"
+    inherits "~2.0.1"
+    isarray "0.0.1"
+    string_decoder "~0.10.x"
 
 readable-stream@^2.0.0, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.2.2:
   version "2.2.9"
@@ -2884,6 +2957,12 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
 
+sleep@^3.0.1:
+  version "3.0.1"
+  resolved "http://registry.npm.taobao.org/sleep/download/sleep-3.0.1.tgz#be4d17c579360e07e04ed8172ba2b10a69054df3"
+  dependencies:
+    nan ">=2.0.0"
+
 slice-ansi@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/slice-ansi/-/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
@@ -2949,6 +3028,15 @@ stream-buffers@3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/stream-buffers/-/stream-buffers-3.0.1.tgz#68a38c5faadeded79ff79988d368e3fb1325ef06"
 
+streamroller@^0.4.0:
+  version "0.4.1"
+  resolved "http://registry.npm.taobao.org/streamroller/download/streamroller-0.4.1.tgz#d435bd5974373abd9bd9068359513085106cc05f"
+  dependencies:
+    date-format "^0.0.0"
+    debug "^0.7.2"
+    mkdirp "^0.5.1"
+    readable-stream "^1.1.7"
+
 string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
@@ -2963,6 +3051,10 @@ string-width@^2.0.0:
   dependencies:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^3.0.0"
+
+string_decoder@~0.10.x:
+  version "0.10.31"
+  resolved "http://registry.npm.taobao.org/string_decoder/download/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
 
 string_decoder@~1.0.0:
   version "1.0.1"
@@ -3174,7 +3266,7 @@ window-size@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/window-size/-/window-size-0.1.4.tgz#f8e1aa1ee5a53ec5bf151ffa09742a6ad7697876"
 
-winston@^2.2.0, winston@^2.3.1:
+winston@^2.2.0:
   version "2.3.1"
   resolved "http://registry.npm.taobao.org/winston/download/winston-2.3.1.tgz#0b48420d978c01804cf0230b648861598225a119"
   dependencies:
@@ -3205,12 +3297,6 @@ write@^0.2.1:
   resolved "https://registry.yarnpkg.com/write/-/write-0.2.1.tgz#5fc03828e264cea3fe91455476f7a3c566cb0757"
   dependencies:
     mkdirp "^0.5.1"
-
-x509@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/x509/-/x509-0.3.2.tgz#ea5243ac5a4e5c44f12b25231b707142e4d45ec4"
-  dependencies:
-    nan "2.2.0"
 
 xtend@^4.0.0, xtend@^4.0.1:
   version "4.0.1"

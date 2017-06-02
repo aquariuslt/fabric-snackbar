@@ -12,7 +12,8 @@ import _ from 'lodash';
 import pathUtil from './path-util';
 
 
-import logger from './logger';
+import log4js from 'log4js';
+let logger = log4js.getLogger('Express');
 
 
 function initBasicMiddleware(app) {

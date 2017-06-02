@@ -1,9 +1,10 @@
 /*** Created by aquariuslt on 6/2/17.*/
-
+import log4js from 'log4js';
 
 import config from '../config/config';
-import logger from './logger';
 import express from './express';
+
+let logger = log4js.getLogger('App');
 
 function init(next) {
   let app = express.initExpress();
