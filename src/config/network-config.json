@@ -1,0 +1,27 @@
+{
+  "network-config": {
+    "orderer": {
+      "url": "grpcs://localhost:7050",
+      "server-hostname": "factory-orderer",
+      "tls_cacerts": "../artifacts/tls/orderer/ca-cert.pem"
+    },
+    "factory": {
+      "name": "factory",
+      "mspid": "factory-msp",
+      "ca": "",
+      "factory-peer-a": {
+      },
+      "factory-peer-b": {
+      }
+    },
+    "snackbar": {
+      "name": "snackbar",
+      "mspid": "snackbar-msp",
+      "ca": "",
+      "snackbar-peer-a": {
+      },
+      "snackbar-peer-b": {
+      }
+    }
+  }
+}

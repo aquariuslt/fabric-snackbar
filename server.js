@@ -1,7 +1,3 @@
-/* Created by Aquariuslt on 6/2/17.*/
+import app from './src/lib/app';
 
-import express from 'express';
-
-
-let app = express();
-
+app.start();
