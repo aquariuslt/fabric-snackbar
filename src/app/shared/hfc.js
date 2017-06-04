@@ -1,7 +1,6 @@
-/*** Created by aquariuslt on 6/2/17.*/
+/** * Created by aquariuslt on 6/2/17.*/
 
 import _ from 'lodash';
-
 // hfc = hyperledger fabric client
 import hfc from 'fabric-client';
 import FabricCAService from 'fabric-ca-client/lib/FabricCAClientImpl';
@@ -50,7 +49,7 @@ function getCAClient(organization) {
   return new FabricCAService(caUrl);
 }
 
-function getNetworkConfig(){
+function getNetworkConfig() {
   return networkConfig;
 }
 
@@ -60,7 +59,7 @@ function getKeyValueStore(organization) {
   return _.join([config.keyValueStore, organization], '_');
 }
 
-function getMspId(organization){
+function getMspId(organization) {
   return networkConfig[organization].mspid;
 }
 

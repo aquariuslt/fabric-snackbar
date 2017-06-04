@@ -43,3 +43,7 @@ npm start
 
 
 #### Verify
+
+```bash
+curl -s -X POST http://localhost:5000/users -H "cache-control: no-cache" -H "content-type: application/x-www-form-urlencoded" -d 'username=Jim&organization=little-factory.com'
+```

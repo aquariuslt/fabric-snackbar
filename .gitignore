@@ -20,7 +20,6 @@ dist
 
 # Project Development cryptogen && configtxgen tmp
 scripts/artifacts-dev/crypto-config
-scripts/artifacts-dev/channel
 
 # Log File
 *.log

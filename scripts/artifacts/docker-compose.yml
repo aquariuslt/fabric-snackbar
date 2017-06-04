@@ -70,7 +70,7 @@ services:
     command: >
       sh -c 'fabric-ca-server start
       --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.little-factory.com-cert.pem
-      --ca.keyfile /etc/hyperledger/fabric-ca-server-config/6b17bdc5920c78d0a46a59145671e68aee3662569e6862048edf16eb6d885f87_sk
+      --ca.keyfile /etc/hyperledger/fabric-ca-server-config/8f1467d5d361b3902c15160fda1d41672f3a3ecd448f54e9e1e26889d9c55dd2_sk
       -b admin:adminpw' -d
 
   ca.little-snackbar.com:
@@ -87,7 +87,7 @@ services:
     command: >
       sh -c 'fabric-ca-server start
       --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.little-snackbar.com-cert.pem
-      --ca.keyfile /etc/hyperledger/fabric-ca-server-config/032c54edf6bec1f8ac538748f82b5516ea1da16206a9ba1b288baa2b672e5e15_sk
+      --ca.keyfile /etc/hyperledger/fabric-ca-server-config/dd6428d4200b67ca2661352769fa2f107e4a30d91e5390017ce3146d40ba1c5b_sk
       -b admin:adminpw' -d
 
   ## Peer

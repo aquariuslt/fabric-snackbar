@@ -5,23 +5,23 @@ let config = {
 
   // application design level config
 
-  channelName:'snackbar-tx',
-  organizations:[
-    'factory',
-    'snackbar'
+  channelName: 'snackbar-channel',
+  organizations: [
+    'little-factory.com',
+    'little-snackbar.com'
   ],
-  keyValueStore:'/tmp/fabric-client-kvs',
-  users:[
+  keyValueStore: '/tmp/fabric-client-kvs',
+  users: [
     {
-      username:'admin',
-      secret:'adminpw'
+      username: 'admin',
+      secret: 'adminpw'
     }
   ],
 
 
   // other config file location settings
-  file:{
-    network:'src/config/network-config.json'
+  file: {
+    network: 'src/config/network-config.json'
   },
 
   // module level settings

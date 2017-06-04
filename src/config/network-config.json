@@ -2,41 +2,41 @@
   "network-config": {
     "orderer": {
       "url": "grpcs://localhost:7050",
-      "server-hostname": "factory-orderer",
-      "tls_cacerts": "../artifacts/tls/orderer/ca-cert.pem"
+      "server-hostname": "orderer.ibm.com",
+      "tls_cacerts": "../../scripts/artifacts/crypto-config/ordererOrganizations/ibm.com/ca/ca.ibm.com-cert.pem"
     },
-    "factory": {
-      "name": "factory",
+    "little-factory.com": {
+      "name": "little-factory.com",
       "mspid": "factory-msp",
       "ca": "http://localhost:7054",
-      "factory-peer-a": {
+      "peer0.little-factory.com": {
         "requests": "grpcs://localhost:7051",
         "events": "grpcs://localhost:7053",
-        "server-hostname": "factory-peer-a",
-        "tls_cacerts": "../artifacts/tls/peers/factory-peer-a/ca-cert.pem"
+        "server-hostname": "peer0.little-factory.com",
+        "tls_cacerts": "../../scripts/artifacts/crypto-config/peerOrganizations/little-factory.com/peers/peer0.little-factory.com/tls/ca.crt"
       },
-      "factory-peer-b": {
+      "peer1.little-factory.com": {
         "requests": "grpcs://localhost:7056",
         "events": "grpcs://localhost:7058",
-        "server-hostname": "factory-peer-b",
-        "tls_cacerts": "../artifacts/tls/peers/factory-peer-b/ca-cert.pem"
+        "server-hostname": "peer1.little-factory.com",
+        "tls_cacerts": "../../scripts/artifacts/crypto-config/peerOrganizations/little-factory.com/peers/peer1.little-factory.com/tls/ca.crt"
       }
     },
-    "snackbar": {
-      "name": "snackbar",
+    "little-snackbar.com": {
+      "name": "little-snackbar.com",
       "mspid": "snackbar-msp",
       "ca": "http://localhost:8054",
-      "snackbar-peer-a": {
+      "peer0.little-snackbar.com": {
         "requests": "grpcs://localhost:8051",
         "events": "grpcs://localhost:8053",
-        "server-hostname": "snackbar-peer-a",
-        "tls_cacerts": "../artifacts/tls/peers/snackbar-peer-a/ca-cert.pem"
+        "server-hostname": "peer0.little-snackbar.com",
+        "tls_cacerts": "../../scripts/artifacts/crypto-config/peerOrganizations/little-snackbar.com/peers/peer0.little-snackbar.com/tls/ca.crt"
       },
-      "snackbar-peer-b": {
+      "peer1.little-snackbar.com": {
         "requests": "grpcs://localhost:8056",
         "events": "grpcs://localhost:8058",
-        "server-hostname": "snackbar-peer-b",
-        "tls_cacerts": "../artifacts/tls/peers/snackbar-peer-b/ca-cert.pem"
+        "server-hostname": "peer1.little-snackbar.com",
+        "tls_cacerts": "../../scripts/artifacts/crypto-config/peerOrganizations/little-snackbar.com/peers/peer1.little-snackbar.com/tls/ca.crt"
       }
     }
   }

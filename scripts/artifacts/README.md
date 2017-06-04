@@ -1,6 +1,7 @@
 ## CryptoGen
 
 ```bash
+export FABRIC_CFG_PATH=$PWD
 cryptogen generate --config=./crypto-config.yaml 
 ```
 
