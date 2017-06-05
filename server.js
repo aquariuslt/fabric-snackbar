@@ -1,3 +1,3 @@
-import app from './src/lib/app';
+var app = require('./src/lib/app');
 
 app.start();

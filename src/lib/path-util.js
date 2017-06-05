@@ -1,9 +1,9 @@
 /*** Created by aquariuslt on 6/2/17.*/
-import path from 'path';
-import fs from 'fs';
-import glob from 'glob';
+var path = require('path');
+var fs = require('fs');
+var glob = require('glob');
 
-import _ from 'lodash';
+var _ = require('lodash');
 
 
 const _root = path.resolve(__dirname, '../..');
@@ -55,7 +55,7 @@ function checkFileExist(args) {
 }
 
 
-export default{
+module.exports = {
   root,
   checkFileExist,
   calGlobPaths

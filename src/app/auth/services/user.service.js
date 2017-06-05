@@ -1,14 +1,14 @@
 /* Created by aquariuslt on 6/2/17.*/
 
-import config from '../../../config/config';
+var config = require('../../../config/config');
 
-import hfc from '../../shared/hfc';
-import FabricCAService from 'fabric-ca-client/lib/FabricCAClientImpl';
-import User from 'fabric-client/lib/User';
+var hfc = require('../../shared/hfc');
+var FabricCAService = require('fabric-ca-client/lib/FabricCAClientImpl');
+var User = require('fabric-client/lib/User');
 
 
-import log4js from 'log4js';
-import * as _ from 'lodash';
+var log4js = require('log4js');
+var _ = require('lodash');
 let logger = log4js.getLogger('UserService');
 
 const tlsOptions = {
@@ -39,13 +39,16 @@ function getRegisteredUsers({username, organization}) {
       return client.getUserContext(username, true)
         .then((user) => {
           if (user && user.isEnrolled()) {
-            logger.info(`Successfully loaded member:${username} from persistence`);
+            logger.info(`Successfully loaded member:${username} = require( persistence`);
             return user;
           }
           else {
             return getAdminUser(organization)
               .then((adminUser) => {
                 member = adminUser;
+                // exception happen here
+                // console.log(caService);
+
                 return caService.register({
                   enrollmentID: username,
                   affiliation: organization
@@ -104,7 +107,7 @@ function getAdminUser(organization) {
       return client.getUserContext(username, true)
         .then((user) => {
           if (user && user.isEnrolled()) {
-            logger.info(`Successfully loaded admin member:${username} from persistence`);
+            logger.info(`Successfully loaded admin member:${username} = require( persistence`);
             return user;
           }
           else {
@@ -135,7 +138,7 @@ function getAdminUser(organization) {
 }
 
 
-export default {
+module.exports = {
   getRegisteredUsers,
   getAdminUser
 };

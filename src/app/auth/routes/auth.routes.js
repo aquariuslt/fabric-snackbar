@@ -1,11 +1,11 @@
 /*** Created by aquariuslt on 6/2/17.*/
 
-import jwt from 'jsonwebtoken';
+var jwt = require('jsonwebtoken');
 
-import config from '../../../config/config';
-import userService from '../services/user.service';
-import * as _ from "lodash";
-import log4js from 'log4js';
+var config = require('../../../config/config');
+var userService = require('../services/user.service');
+var _ = require('lodash');
+var log4js = require('log4js');
 let logger = log4js.getLogger('AuthRoutes');
 
 /**
@@ -44,7 +44,7 @@ function authRoutes(app) {
     });
 }
 
-export default authRoutes;
+module.exports = authRoutes;
 
 
 

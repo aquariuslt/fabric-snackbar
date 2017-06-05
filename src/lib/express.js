@@ -1,18 +1,18 @@
 /** Created by CUIJA on 06-01-2017.*/
 
-import express from 'express';
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
-import compress from 'compression';
-import cors from 'cors';
-import expressJWT from 'express-jwt';
+var express =require('express');
+var bodyParser= require('body-parser');
+var cookieParser= require('cookie-parser');
+var compress= require('compression');
+var cors= require('cors');
+var expressJWT= require('express-jwt');
 
-import _ from 'lodash';
+var _= require('lodash');
 
-import pathUtil from './path-util';
+var pathUtil= require('./path-util');
 
 
-import log4js from 'log4js';
+var log4js= require('log4js');
 let logger = log4js.getLogger('Express');
 
 
@@ -62,8 +62,7 @@ function initServerRoutes(app) {
     let routeAbsolutePath = pathUtil.root('/')+routePath;
     logger.info('Loading route:',routeAbsolutePath);
 
-    // es6 way dynamic require using 'require('${es6-syntax-export-class}').default'
-    require(routeAbsolutePath).default((app));
+    require(routeAbsolutePath)(app);
   });
 
   app.use('/', router);
@@ -79,6 +78,6 @@ function initExpress() {
 }
 
 
-export default {
+module.exports = {
   initExpress
-}
+};

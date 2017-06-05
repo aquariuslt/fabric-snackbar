@@ -1,13 +1,13 @@
 /** * Created by aquariuslt on 6/2/17.*/
 
-import _ from 'lodash';
+var _ = require('lodash');
 // hfc = hyperledger fabric client
-import hfc from 'fabric-client';
-import FabricCAService from 'fabric-ca-client/lib/FabricCAClientImpl';
+var hfc = require('fabric-client');
+var FabricCAService = require('fabric-ca-client/lib/FabricCAClientImpl');
 
-import pathUtil from '../../lib/path-util';
-import config from '../../config/config';
-import log4js from 'log4js';
+var pathUtil = require('../../lib/path-util');
+var config = require('../../config/config');
+var log4js = require('log4js');
 let logger = log4js.getLogger('HFCWrapper');
 
 hfc.addConfigFile(pathUtil.root(config.file.network));
@@ -69,4 +69,4 @@ hfcWrapper.getKeyValueStore = getKeyValueStore;
 hfcWrapper.getNetworkConfig = getNetworkConfig;
 hfcWrapper.getMspId = getMspId;
 
-export default hfcWrapper;
+module.exports = hfcWrapper;

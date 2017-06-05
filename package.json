@@ -4,8 +4,8 @@
   "description": "hyperledger-snackbar under fabric-sdk-node",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node server.js",
-    "serve": "babel-node server.js"
+    "start": "node server.js",
+    "serve": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.17.2",

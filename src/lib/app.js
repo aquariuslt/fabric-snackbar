@@ -1,8 +1,8 @@
 /*** Created by aquariuslt on 6/2/17.*/
-import log4js from 'log4js';
+var log4js = require('log4js');
 
-import config from '../config/config';
-import express from './express';
+var config = require('../config/config');
+var express = require('./express');
 
 let logger = log4js.getLogger('App');
 
@@ -29,6 +29,6 @@ function start(next) {
   });
 }
 
-export default {
+module.exports = {
   start
-}
+};
